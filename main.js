@@ -70,13 +70,13 @@ function redPinkFamilies() {
 function familySearch() {
   // Display Name and Family of all Colors that Match a User Provided Family Name. Also Output a Count of Colors Found.
   outputEl.innerHTML = "<h3>Family Search</h3>";
+  count = 0;
   let familySearch = prompt("enter a family");
-  let count = 0;
   for (let i = 0; i < colorData.length; i++) {
-    let name = colorData[i].name;
-    let family = colorData[i].family;
     if (colorData[i].family == familySearch) {
       count++;
+      let name = colorData[i].name;
+      let family = colorData[i].family;
       outputEl.innerHTML += `<p>${name}, ${family}</p>`;
     }
   }
@@ -89,9 +89,9 @@ function startLetterSearch() {
   let letterSearch = prompt("enter a letter");
   let count = 0;
   for (let i = 0; i < colorData.length; i++) {
-    let name = colorData[i].name;
     if (colorData[i].name[0] == letterSearch) {
       count++;
+      let name = colorData[i].name;
       outputEl.innerHTML += `<p>${name}</p>`;
     }
   }
